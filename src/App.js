@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import "semantic-ui-css/semantic.min.css";
+import {
+  Segment,
+  Divider,
+  Grid,
+  Header,
+  Icon,
+  Search,
+  Button,
+} from "semantic-ui-react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Segment placeholder>
+          <Grid columns={2} stackable textAlign="center">
+            <Divider vertical>Or</Divider>
+
+            <Grid.Row verticalAlign="middle">
+              <Grid.Column>
+                <Header icon>
+                  <Icon name="search" />
+                  Cari document
+                </Header>
+
+                <Search placeholder="Search document..." />
+              </Grid.Column>
+
+              <Grid.Column>
+                <Header icon>
+                  <Icon name="pdf file outline" />
+                  Tambah Document Baru
+                </Header>
+                <Button primary>Create Document</Button>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+      </div>
+    );
+  }
 }
 
 export default App;
